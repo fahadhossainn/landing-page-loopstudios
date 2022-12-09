@@ -1,0 +1,240 @@
+.header {
+  width: 100%;
+  height: 100vh;
+  padding: 2rem 5rem;
+  background-image: url(../img/image-hero.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.navbar {
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    height: 1.4rem;
+  }
+
+  &__items {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+  &__item {
+    position: relative;
+    margin: 0 1.5rem;
+
+    &::after {
+      content: "";
+      background-color: $color-primary;
+      width: 0.1rem;
+      height: 0.1rem;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.35s ease;
+    }
+  }
+  &__item:hover &__link {
+    color: $color-primary;
+    transform: scale(0.9);
+    &:active {
+      transform: scale(0.6);
+    }
+  }
+  &__item:hover {
+    &::after {
+      opacity: 1;
+      visibility: visible;
+      width: 90%;
+    }
+  }
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 1.4rem;
+      color: $color-primary;
+      font-weight: 500;
+      padding: 0.5rem 1.6rem;
+      transition: all 0.35s;
+    }
+  }
+
+  &__toggle {
+    position: fixed;
+    right: 2rem;
+    width: 16px;
+    height: 14px;
+    outline: 1.5px dashed $color-tertiary;
+    outline-offset: 1.7px;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+    @include respond(tab-port) {
+      display: inline-block;
+    }
+    &--icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.section__about {
+  position: relative;
+  width: 70%;
+  margin: 15rem auto;
+
+  @include respond(tab-port) {
+    width: 90%;
+  }
+}
+
+.about__left {
+  width: 50%;
+  height: 40rem;
+  @include respond(phone) {
+    width: 80%;
+    height: 30rem;
+    margin: 0 auto;
+  }
+}
+.about__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about__details {
+  background-color: $color-primary;
+  padding: 3rem 5rem;
+  position: absolute;
+  bottom: -10rem;
+  left: 30%;
+  @include respond(phone) {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+  }
+  &--text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: $color-secondary;
+    letter-spacing: 0.1rem;
+  }
+}
+.section__gallery {
+  position: relative;
+  width: 70%;
+  margin: 5rem auto;
+  &--heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.section__footer {
+  width: 100%;
+  // height: 15rem;
+  padding: 5rem;
+  background-color: $color-secondary-dark;
+}
+
+.footer {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include respond(phone) {
+    flex-direction: column;
+  }
+  &__left {
+    align-self: flex-start;
+  }
+  &__right {
+    align-self: flex-end;
+  }
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: $color-primary;
+    padding: 1rem 0.8rem;
+    letter-spacing: 0.2rem;
+  }
+
+  &__links {
+    list-style: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: $color-primary;
+      text-transform: capitalize;
+      padding: 0.4rem 0.8rem;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+
+    &:hover,
+    &:active {
+      border: 1px solid $color-primary;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.4rem 0;
+  }
+
+  &__icon {
+    height: 1.5rem;
+    margin: 0 1.1rem;
+    text-decoration: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      opacity: 0.4;
+    }
+  }
+
+  &__copyright {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: $color-primary;
+    letter-spacing: 0.1rem;
+    opacity: 0.4;
+  }
+}
