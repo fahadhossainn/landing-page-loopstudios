@@ -233,6 +233,7 @@ body {
     height: 14px;
     display: none;
     cursor: pointer;
+    background: transparent;
     z-index: 1000; }
     @media only screen and (max-width: 56.25em) {
       .navbar__toggle {

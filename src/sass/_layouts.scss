@@ -80,6 +80,7 @@
     height: 14px;
     display: none;
     cursor: pointer;
+    background: transparent;
     z-index: 1000;
     @include respond(tab-port) {
       display: inline-block;
