@@ -35,8 +35,9 @@
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 1.5rem;
   @include respond(phone) {
-    width: 60%;
+    width: 90%;
     margin: 7rem auto;
+    padding: 0 2rem;
     grid-template-columns: 1fr;
   }
   &__item {
