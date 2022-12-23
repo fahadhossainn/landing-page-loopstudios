@@ -36,6 +36,9 @@
   grid-gap: 1.5rem;
   @include respond(phone) {
     width: 90%;
+
+    width: 75%;
+
     margin: 7rem auto;
     padding: 0 2rem;
     grid-template-columns: 1fr;
